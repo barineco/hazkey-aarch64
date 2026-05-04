@@ -1,0 +1,24 @@
+// hazkey-aarch64 build / install configuration
+
+// distrobox container
+container "hazkey-build"
+image "docker.io/library/ubuntu:24.04"
+
+// build toolchain
+swift-url "https://download.swift.org/swift-6.2-release/ubuntu2404-aarch64/swift-6.2-RELEASE/swift-6.2-RELEASE-ubuntu24.04-aarch64.tar.gz"
+cmake-version "4.1.0"
+protobuf-tag "v21.12"
+
+// upstream hazkey ref (tag / branch / commit)
+hazkey-ref "0.2.1"
+
+// build flags
+vulkan #false
+static-protobuf #true
+
+// host install destination
+prefix "/usr"
+manifest "/var/lib/hazkey-aarch64/installed-files.txt"
+
+// fcitx5-configtool wrapper
+configtool-wrapper "~/.local/bin/fcitx5-configtool"
