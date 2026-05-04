@@ -31,6 +31,12 @@ podman info # rootless が動くこと
 # container 作成 → build 
 ./install.sh --build-only
 
+# install 完了後に build/ を削除 (再生成可能な一時成果物)
+./install.sh --clean-after
+
+# build/ のみ削除 (install は実行しない)
+./install.sh --clean
+
 # ヘルプ
 ./install.sh -h
 ```
